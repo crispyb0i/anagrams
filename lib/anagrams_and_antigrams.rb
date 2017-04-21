@@ -1,8 +1,12 @@
 class String
   define_method(:anagram) do |word2|
+    receiver = self.downcase
+    input = word2.downcase
+    receiver.gsub(/[^A-Za-z0-9\s]/i, '')
+    input.gsub(/[^A-Za-z0-9\s]/i, '')
 
-    input1 = self.downcase.split("")
-    input2 = word2.downcase.split("")
+    input1 = receiver.split("")
+    input2 = input.split("")
     word_counter = Hash.new()
     counter_sum = 0
     is_anagram = false
@@ -48,7 +52,7 @@ class String
           if input1.reverse() === input1 && input2.reverse() === input2
             return "These words are anagrams and also palindromes!"
           else
-        return "These words are anagrams!"
+            return "These words are anagrams!"
           end
         end
       end

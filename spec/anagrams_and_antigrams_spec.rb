@@ -17,4 +17,7 @@ describe('String#anagram') do
   it("checks to see if user's inputs are antigrams") do
   expect("hi".anagram("bye")).to(eq("these words are antigrams!"))
   end
+  it("checks to see if code works for multiple word sentences") do
+  expect("taco cat".anagram("cat taco")).to(eq("These words are anagrams!"))
+  end
 end
