@@ -11,4 +11,7 @@ describe('String#anagram') do
   it("checks to see if user's anagram is also a palindrome") do
   expect("racecar".anagram("racecar")).to(eq("These words are anagrams and also palindromes!"))
   end
+  it("checks to see if user's inputs are actual words") do
+  expect("bpz".anagram("zbp")).to(eq("You need to input actual words!"))
+  end
 end

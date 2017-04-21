@@ -6,12 +6,16 @@ class String
   word_counter = Hash.new()
   counter_sum = 0
   is_anagram = false
+  is_word_vowels = ["a","e","i","o","u","y"]
 
-  if input1.length != input2.length
-    return false
-  end
+  if (is_word_vowels & input1.to_a) == [];
+    "You need to input actual words!"
+  else
+    if input1.length != input2.length
+    false
+    end
 
-  input1.each() do |character|
+  input1.each do |character|
     if word_counter[character] === nil
     word_counter[character] = 1
     elsif word_counter[character] += 1
@@ -35,12 +39,13 @@ class String
     return false
   end
 
-  if is_anagram = true
-    if input1.reverse() === input2.reverse()
+  if is_anagram === true
+    if input1.reverse() === input1 && input2.reverse() === input2
       return "These words are anagrams and also palindromes!"
     else
       return "These words are anagrams!"
     end
     end
   end
+end
 end
