@@ -3,9 +3,9 @@ class String
 
   input1 = self.downcase.split("")
   input2 = word2.downcase.split("")
-
   word_counter = Hash.new()
   counter_sum = 0
+  is_anagram = false
 
   if input1.length != input2.length
     return false
@@ -25,16 +25,22 @@ class String
     end
   end
 
-  counter = 0
   word_counter.each do |value|
     counter_sum += word_counter.fetch(value[0])
   end
 
   if counter_sum === 0
-    return "These words are anagrams"
+    is_anagram = true
   else
     return false
   end
 
-end
+  if is_anagram = true
+    if input1.reverse() === input2.reverse()
+      return "These words are anagrams and also palindromes!"
+    else
+      return "These words are anagrams!"
+    end
+    end
+  end
 end
