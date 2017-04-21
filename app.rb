@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
-# require('./lib/rock_paper_scissors')
+require('./lib/anagrams_and_antigrams')
 also_reload('lib/**/*.rb')
 
 get('/') do
@@ -9,5 +9,5 @@ end
 
 get('/anagram') do
   @anagram = (params.fetch('anagram1')).anagram('anagram2')
-  erb(:title)
+  erb(:anagram)
 end

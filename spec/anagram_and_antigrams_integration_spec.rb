@@ -4,11 +4,12 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 # add own description
-describe('the rock,paper,scissor result path', {:type => :feature}) do
-  it('processes the user entry and returns the result of their rock,paper,scissors game') do
+describe('the anagram and antigram path', {:type => :feature}) do
+  it('processes the user entry and checks to see if their input is an anagram or an antigram') do
     visit('/')
-    select('Rock', from: 'title1')
+    fill_in('anagram1', :with => 'hello')
+    fill_in('anagram2', :with => 'olleh')
     click_button('Send')
-    expect(page).to have_content('Computer threw Rock. Draw Game')
+    expect(page).to have_content('These words are anagrams')
   end
 end

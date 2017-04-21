@@ -1,8 +1,11 @@
 require('rspec')
-# rb file name // require('rock_paper_scissors')
+require('anagrams_and_antigrams')
 
-describe('String#rock_paper_scissors') do
-  it("returns the result for a rock, paper, scissors game") do
-  expect("Rock".rps()).to(eq("Computer threw Rock. Draw Game"))
+describe('String#anagram') do
+  it("checks to see if user's input is an anagram or antigram") do
+  expect("bury".anagram("ruby")).to(eq("These words are anagrams"))
+  end
+  it("checks to see if user's input is an anagram or antigram regardless of case") do
+  expect("Bury".anagram("Ruby")).to(eq("These words are anagrams"))
   end
 end
