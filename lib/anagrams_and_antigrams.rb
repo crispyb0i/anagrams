@@ -2,9 +2,8 @@ class String
   define_method(:anagram) do |word2|
     receiver = self.downcase
     input = word2.downcase
-    receiver.gsub(/[^A-Za-z0-9\s]/i, '')
-    input.gsub(/[^A-Za-z0-9\s]/i, '')
-
+    receiver.gsub!(/[^a-zA-Z0-9]*/, "")
+    input.gsub!(/[^a-zA-Z0-9]*/, "")
     input1 = receiver.split("")
     input2 = input.split("")
     word_counter = Hash.new()
